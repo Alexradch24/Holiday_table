@@ -21,6 +21,7 @@ Holiday* Schedule::get_h(int i){
 }
 
 void Schedule::del(int i){
+    /*delete &(gr[i]);*/
     this->gr.erase(this->gr.begin() + i);
 }
 

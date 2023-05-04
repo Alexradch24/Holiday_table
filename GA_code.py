@@ -396,7 +396,7 @@ day_start_end_personal_holidays = []
 population = []
 wishes = []
 grafic = 0
-count_population = 10
+count_population = 100
 for j in range(count_population):
     flag = True
     for i in range(count_personal):

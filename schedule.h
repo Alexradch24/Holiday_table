@@ -5,6 +5,7 @@
 #ifndef SCHEDULE_H_
 #define SCHEDULE_H_
 
+
 class Schedule {
     std::vector<Holiday> gr;
     double d;   //"хорошесть" графика отпусков относительно распределния

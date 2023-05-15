@@ -290,9 +290,9 @@ def input_date(inp):
             s_imp_date += str(buff)
     return s_imp_date
 
-k1 = 5
-k2 = 3
-k3 = 3
+k1 = 25
+k2 = 25
+k3 = 250
 
 kalendar = [i for i in range(1,366)]
 work_days = [[] for i in range(12)]

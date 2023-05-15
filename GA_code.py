@@ -354,7 +354,7 @@ for i in work_days:
     str_calendar += "0 "
 str_calendar = str_calendar[:-3]
 
-lib = ctypes.CDLL('./lib.so')
+lib = ctypes.CDLL('./lib_win.so')
 lib.create_H.argtypes = [ctypes.c_int, ctypes.c_int, ctypes.c_int]
 lib.create_H.restype = ctypes.c_void_p
 lib.get_start_date.argtypes = [ctypes.c_void_p]

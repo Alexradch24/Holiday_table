@@ -406,7 +406,9 @@ for j in range(count_population):
 k = 0
 prev_cost = 0
 t = time.time()
-while True:
+stop_alg = int(input("Через сколько времени(в мин) остановить алгоритм: "))
+times = "00:00"
+while int(times[:2])*60 + int(times[3:5]) < stop_alg:
 
     childrens = []
     reproduction()
@@ -458,7 +460,25 @@ while True:
         if y_n == "n": break
         print(end = "\n\n\n")
     k += 1
+    times = time.gmtime(time.time() - t)
+    times = time.strftime("%H:%M:%S" , times)
 ##comit
+print("destr = ", lib.get_gr_destr(population[0]))
+print("minim = ", lib.get_gr_min(population[0]))
+print("cost = ", lib.get_gr_cost(population[0]), "from", k1+k2+k3)
+i = population[0]
+for j_ in range(lib.length(i)):
+    j = lib.get_h(i, j_)
+    ind_per = lib.get_person(j)
+    for e1, e2 in person_ind.items():
+        if e2 == ind_per:
+            print(e1, end = ': ')
+    print(rev_date_trans(lib.get_start_date(j)), end = ' - ')
+    print(rev_date_trans(lib.get_end_date(j)), end = ' {')
+    print('удовлетворение отпуском -', lib.get_v(j), end = '}\n')
+    times = time.gmtime(time.time() - t)
+    times = time.strftime("%H:%M:%S" , times)
+    print("population №", k, '    ', times)
 '''
 k=0
 for i in population:

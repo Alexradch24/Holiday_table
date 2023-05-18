@@ -290,9 +290,9 @@ def input_date(inp):
             s_imp_date += str(buff)
     return s_imp_date
 
-k1 = 25
-k2 = 25
-k3 = 250
+k1 = int(input("Коэфициент учёта при равномерном распределение: "))
+k2 = int(input("Коэфициент учёта непопадания в важные промежутки дат: "))
+k3 = int(input("Коэфициент учёта пожеланий сотрудников: "))
 
 kalendar = [i for i in range(1,366)]
 work_days = [[] for i in range(12)]
@@ -354,7 +354,7 @@ for i in work_days:
     str_calendar += "0 "
 str_calendar = str_calendar[:-3]
 
-lib = ctypes.CDLL('./lib_win.so')
+lib = ctypes.CDLL('./lib.so')
 lib.create_H.argtypes = [ctypes.c_int, ctypes.c_int, ctypes.c_int]
 lib.create_H.restype = ctypes.c_void_p
 lib.get_start_date.argtypes = [ctypes.c_void_p]
